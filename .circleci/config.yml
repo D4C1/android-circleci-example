@@ -1,0 +1,16 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: moisesgsaa/android-circleci
+    environment:
+      - TERM: dumb
+    working_directory: ~/opt/workspace/android-circleci-example
+    steps:
+
+      - checkout
+
+      - run:
+          name: Assemble Release
+          command: |
+            gradle assembleRelease
